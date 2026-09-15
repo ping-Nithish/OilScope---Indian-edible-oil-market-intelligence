@@ -1,0 +1,242 @@
+# OilScope — Indian Edible Oil Market Intelligence
+
+### Consumer Impact & Manufacturer Competitive Intelligence
+
+OilScope is a BI market-intelligence project that analyzes India's edible-oil
+market from two perspectives:
+
+1. **Consumer** — How do edible-oil prices and market conditions affect
+   consumers, and what lower-cost alternatives are available?
+2. **Manufacturer** — How do industry activity, import exposure, competitive
+   intensity, pricing and marketplace assortment shape potential opportunities?
+
+---
+
+## Business Problem
+
+India's edible-oil market is significantly exposed to imports. Changes in
+global supply conditions, imports and domestic industry activity can influence
+the economics of edible oils and ultimately affect consumers and manufacturers.
+
+The objective of OilScope is to connect these different layers of the market
+and convert them into decision-support insights.
+
+---
+
+## Key Questions
+
+### Consumer
+
+- How are edible-oil prices and inflation changing?
+- What is the observed price difference between different pack sizes?
+- Which oil categories provide lower-cost alternatives?
+- How are price and consumer ratings positioned across brands?
+
+### Manufacturer
+
+- How competitive are different oil categories?
+- How are products distributed across price segments?
+- Which brands have the largest marketplace presence?
+- Which oil categories and pack sizes appear relatively underrepresented?
+- Where are potential competitive whitespace opportunities worth investigating?
+
+---
+
+## Data Sources
+
+The analysis combines multiple data sources:
+
+- **CPI** — Consumer price/inflation trends
+- **IIP** — Industrial activity by oil type
+- **HCES** — Household consumption expenditure context
+- **Trade/Import data** — India's edible-oil import trends and composition
+- **Amazon marketplace sample** — Product prices, brands, pack sizes,
+  ratings, reviews and marketplace assortment
+
+Amazon data is used as a marketplace sample rather than as a representation
+of the entire Indian edible-oil market.
+
+---
+
+## Data Architecture
+
+Raw Data
+↓
+SQL Server
+↓
+Cleaning & Transformation
+↓
+Business Calculations & Aggregations
+↓
+Analytical SQL Views
+↓
+Power BI
+↓
+Consumer & Manufacturer Decision Support
+
+A deliberate design decision was made to perform the majority of data
+transformation, calculations and aggregations in SQL Server and import only
+the analytical views required by the Power BI report.
+
+---
+
+## Analysis
+
+### 1. Consumer Intelligence
+
+The Consumer page focuses on:
+
+- Average marketplace price
+- CPI and inflation trends
+- Price per litre by oil type
+- Pack-size pricing
+- Brand price positioning
+- Consumer ratings
+- Lower-cost alternative oil categories
+
+### 2. Manufacturer Intelligence
+
+The Manufacturer page focuses on:
+
+- Brand presence
+- Marketplace SKU share
+- IIP trends
+- Import growth
+- Competitive intensity
+- Price-segment distribution
+- Oil-type assortment
+- Pack-size distribution
+- Potential competitive whitespace
+
+---
+
+## Key Findings
+
+### Consumer
+
+**1. Smaller packs carry a significant unit-price premium**
+
+The observed average price per litre of 1-litre packs is approximately
+48% higher than 5-litre packs.
+
+**2. Lower-cost alternatives exist**
+
+Rice bran, soybean and palm-based oils have lower observed marketplace
+prices per litre than higher-priced categories such as groundnut and
+sunflower oil.
+
+### Manufacturer
+
+**3. Premium products have strong marketplace representation**
+
+Super Premium products outnumber Economy/Mass Market products in the
+observed marketplace, suggesting that premiumization is worth further
+investigation.
+
+**4. Sunflower oil is highly competitive**
+
+Sunflower oil has the highest observed competitive intensity, while
+categories such as sesame, mustard and olive oil have comparatively lower
+brand/SKU presence.
+
+**5. Olive oil presents a potential whitespace hypothesis**
+
+Olive oil occupies a predominantly Super Premium price position while
+showing relatively limited brand competition in the observed marketplace.
+This combination warrants further investigation rather than being treated
+as proof of market opportunity.
+
+**6. Intermediate pack sizes may be underrepresented**
+
+Marketplace assortment is concentrated around 1-litre and 5-litre formats.
+The relatively lower presence of intermediate formats suggests a potential
+2–3 litre assortment opportunity worth validating.
+
+---
+
+## Important Data Limitations
+
+### Marketplace Data
+
+Amazon marketplace data represents a sample of observed products,
+pricing, brand presence, ratings and reviews.
+
+It does **not** represent:
+
+- Total Indian market share
+- Total sales
+- Offline retail
+- Overall consumer demand
+- Manufacturer revenue or margins
+
+Therefore, marketplace SKU presence is not interpreted as actual market
+share.
+
+### Causality
+
+The analysis identifies relationships and market signals but does not
+establish causal relationships between imports, industry activity,
+inflation and consumer prices.
+
+### IIP
+
+IIP is treated as an indicator of industrial activity and not as a direct
+measure of physical production volume.
+
+### Opportunity Signals
+
+Potential whitespace or opportunity findings are hypotheses generated from
+the available data. Validation using sales, demand, distribution and
+manufacturer-level data would be required before making investment or
+market-entry decisions.
+
+---
+
+## Tools & Technologies
+
+- **SQL Server** — Data cleaning, transformation, aggregation and analytical views
+- **Power BI** — Data visualization and decision-support dashboards
+- **DAX** — Measures and report-level calculations where required
+- **Python / Data Collection** — Data preparation and marketplace data collection
+- **GitHub** — Version control and project documentation
+
+---
+
+## Dashboard
+
+### Consumer View
+
+![Consumer Dashboard](Screenshots/consumer_page.png)
+
+### Manufacturer View
+
+![Manufacturer Dashboard](Screenshots/manufacturer_page.png)
+
+---
+
+## Business Value
+
+OilScope demonstrates how publicly available macroeconomic, industry,
+trade and marketplace data can be combined into a market-intelligence
+framework.
+
+The prototype is designed to help:
+
+**Consumers**
+→ understand price pressure and potential alternatives.
+
+**Manufacturers**
+→ understand competitive positioning, import exposure and potential
+areas requiring deeper market validation.
+
+The intended next step for a production version would be recurring data
+refreshes, broader marketplace coverage, offline retail data, sales
+volumes and manufacturer-level information.
+
+---
+
+## Author
+
+Built as part of my BI/Data Analytics portfolio to demonstrate
+end-to-end business intelligence, SQL analytics, data modelling and
+Power BI decision-support development.
