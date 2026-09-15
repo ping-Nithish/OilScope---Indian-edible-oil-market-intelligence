@@ -1,0 +1,140 @@
+# Data Sources
+
+OilScope combines macroeconomic, household expenditure, trade and
+marketplace data to analyze India's edible-oil market from both consumer
+and manufacturer perspectives.
+
+---
+
+## 1. Consumer Price Index (CPI)
+
+**Source:** Ministry of Statistics and Programme Implementation (MoSPI), Government of India
+
+**Used for:**
+- Consumer price trends
+- Inflation analysis
+- Understanding changes in consumer price pressure
+
+**Role in OilScope:**  
+CPI provides the consumer-side price context for the edible-oil market.
+
+**Reference:**  
+[MoSPI — Consumer Price Index](https://www.mospi.gov.in/)
+
+---
+
+## 2. Index of Industrial Production (IIP)
+
+**Source:** Ministry of Statistics and Programme Implementation (MoSPI), Government of India
+
+**Used for:**
+- Industry activity trends
+- Oil-type level industrial activity
+- 12-month average IIP
+- Comparison of industry trends across oil categories
+
+**Role in OilScope:**  
+IIP is used as an indicator of industrial activity within the edible-oil
+market.
+
+**Reference:**  
+[MoSPI — Index of Industrial Production](https://www.mospi.gov.in/)
+
+---
+
+## 3. Household Consumption Expenditure Survey (HCES)
+
+**Source:** Ministry of Statistics and Programme Implementation (MoSPI), Government of India
+
+**Used for:**
+- Household expenditure on edible oils
+- Rural vs urban consumption expenditure context
+
+**Role in OilScope:**  
+HCES provides context for understanding the importance of edible oil in
+household consumption expenditure.
+
+**Reference:**  
+[MoSPI — Household Consumption Expenditure Survey](https://www.mospi.gov.in/)
+
+---
+
+## 4. Edible Oil Import / Trade Data
+
+**Source:** Government of India trade and edible-oil statistics
+
+**Used for:**
+- Import volumes
+- Import growth
+- Composition of edible-oil imports
+- Understanding India's import exposure
+
+**Role in OilScope:**  
+Trade data provides the supply-side perspective and helps assess India's
+dependence on imported edible oils.
+
+**Reference:**  
+[Department of Food & Public Distribution](https://dfpd.gov.in/)
+
+---
+
+## 5. Amazon Marketplace Data
+
+**Source:** Amazon India marketplace
+
+**Used for:**
+- Product and brand identification
+- Observed marketplace prices
+- Price per litre
+- Pack-size analysis
+- Brand/SKU presence
+- Price-segment analysis
+- Product ratings
+- Review counts
+- Competitive positioning
+
+**Role in OilScope:**  
+Amazon data provides a sample of consumer-facing marketplace activity and
+is used to supplement the macroeconomic and industry-level datasets.
+
+The data represents marketplace observations at the time of extraction and
+does not represent the entire Indian edible-oil market.
+
+---
+
+## Data Integration
+
+The datasets were integrated through a SQL Server analytical layer.
+
+The overall data flow was:
+
+Government Data + Trade Data + Marketplace Data
+↓
+SQL Server
+↓
+Data Validation & Transformation
+↓
+Business Calculations & Aggregations
+↓
+Analytical SQL Views
+↓
+Power BI
+
+Only the analytical views required by the Power BI report were imported
+into the final dashboard.
+
+---
+
+## Data Scope
+
+OilScope is intended as a **market-intelligence prototype**, not a
+comprehensive commercial market study.
+
+Government datasets provide macroeconomic, industrial and household
+expenditure context, while Amazon provides a point-in-time sample of
+marketplace pricing, assortment and competitive positioning.
+
+For a production-grade market intelligence system, additional sources
+such as offline retail sales, multi-platform marketplace data, sales
+volume, distribution data and manufacturer-level information would be
+required.
