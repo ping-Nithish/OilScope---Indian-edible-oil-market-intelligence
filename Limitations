@@ -1,0 +1,91 @@
+## Methodology
+
+OilScope follows an end-to-end analytical workflow designed to connect
+macroeconomic conditions with consumer impact and competitive market
+intelligence.
+
+### 1. Data Collection
+
+Data was collected from multiple sources to capture different layers of
+the edible-oil market:
+
+- Consumer Price Index (CPI) for consumer price and inflation trends
+- Index of Industrial Production (IIP) for industry-level activity
+- Household Consumption Expenditure Survey (HCES) for household spending
+  context
+- Trade/import data for India's edible-oil import exposure and trends
+- Amazon marketplace data as a sample of observed product pricing,
+  assortment, brands, ratings and reviews
+
+### 2. Data Preparation
+
+The collected datasets were loaded into SQL Server and validated for:
+
+- Missing values
+- Duplicate records
+- Data types
+- Date consistency
+- Product and brand attributes
+- Pack-size consistency
+
+Marketplace product prices were standardized to a common
+**price-per-litre** metric to enable meaningful comparisons across
+different pack sizes.
+
+### 3. SQL Analytics
+
+SQL Server was used as the primary analytical layer.
+
+Transformations, business calculations and aggregations were performed in
+SQL rather than relying extensively on Power BI.
+
+Analytical views were created for the specific requirements of the
+dashboard, including:
+
+- Consumer price analysis
+- CPI and inflation trends
+- Industry/IIP analysis
+- Import trends
+- Marketplace pricing
+- Brand and SKU presence
+- Price-segment analysis
+- Pack-size analysis
+- Competitive positioning
+
+### 4. Business Analysis
+
+The analysis was divided into two perspectives.
+
+#### Consumer Intelligence
+
+The consumer analysis evaluates:
+
+- Price and inflation trends
+- Marketplace price differences between oil categories
+- Pack-size price differences
+- Lower-cost alternatives
+- Brand price positioning and consumer ratings
+
+#### Manufacturer Intelligence
+
+The manufacturer analysis evaluates:
+
+- Brand and SKU presence
+- Competitive intensity
+- Price-segment distribution
+- Oil-type assortment
+- Import and industry trends
+- Pack-size distribution
+- Potential competitive whitespace
+
+### 5. Power BI
+
+Only the required analytical SQL views were imported into Power BI.
+
+The final dashboard consists of two decision-support pages:
+
+- **Consumer** — Consumer price impact and alternatives
+- **Manufacturer** — Competitive intelligence and potential opportunities
+
+Power BI was primarily used for visualization, filtering, interaction and
+presentation of the analytical results.
